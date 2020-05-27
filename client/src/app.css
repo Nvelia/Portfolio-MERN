@@ -1,0 +1,65 @@
+.filter:hover {
+  text-decoration: none;
+}
+
+/*.filter:hover {
+  background: #007bff !important;
+}*/
+
+.table-skills {
+  font-size: 1.2rem;
+}
+
+.table {
+  text-align: center;
+}
+
+.table-category th {
+  width: 50%;
+}
+
+.table-work th:nth-child(1) {
+  width: 25%;
+}
+
+.table-work th:nth-child(2) {
+  width: 75%;
+}
+
+.table-work th:nth-child(3),
+.table-category th:nth-child(2),
+.table-skill th:nth-child(2),
+.table-skill th:nth-child(3) {
+  width: 1%;
+}
+
+.btn-admin-homepage {
+  border-radius: 0 !important;
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  font-size: 2rem;
+}
+
+.work-image {
+  display: block;
+  margin: auto;
+  width: 80%;
+  max-height: 500px;
+}
+
+.formErrors {
+  margin-bottom: 20px;
+  text-align: center;
+  background: rgb(252, 80, 80);
+}
+
+.formErrors span {
+  display: block;
+  width: 85%;
+  margin: auto;
+  border-radius: 20px;
+  color: white;
+  line-height: 30px;
+  margin-bottom: 5px;
+}

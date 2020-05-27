@@ -1,0 +1,33 @@
+export const SET_AUTHENTICATION = "SET_AUTHENTICATION";
+
+export const GET_ERRORS = "GET_ERRORS";
+
+export const ADD_CATEGORY = "ADD_CATEGORY";
+export const FETCH_CATEGORIES = "FETCH_CATEGORIES";
+export const DELETE_CATEGORY = "DELETE_CATEGORY";
+export const UPDATE_CATEGORY = "UPDATE_CATEGORY";
+export const CATEGORIES_UNLOAD = "CATEGORIES_UNLOAD";
+export const CATEGORIES_REQUEST = "CATEGORIES_REQUEST";
+
+export const ADD_SKILL = "ADD_SKILL";
+export const FETCH_SKILLS = "FETCH_SKILLS";
+export const DELETE_SKILL = "DELETE_SKILL";
+export const UPDATE_SKILL = "UPDATE_SKILL";
+export const SKILLS_UNLOAD = "SKILLS_UNLOAD";
+export const SKILLS_REQUEST = "SKILLS_REQUEST";
+
+export const ADD_WORK = "ADD_WORK";
+export const SAVE_WORK = "SAVE_WORK";
+export const FETCH_WORKS = "FETCH_WORKS";
+export const DELETE_WORK = "DELETE_WORK";
+export const UPDATE_WORK = "UPDATE_WORK";
+export const WORKS_UNLOAD = "WORKS_UNLOAD";
+
+export const ADD_IMAGE = "ADD_IMAGE";
+export const UPDATE_IMAGE = "UPDATE_IMAGE";
+export const FETCH_IMAGE = "FETCH_IMAGE";
+export const IMAGE_UNLOAD = "IMAGE_UNLOAD";
+export const IMAGE_REQUEST = "IMAGE_REQUEST";
+
+export const ADD_FLASH_MESSAGE = "ADD_FLASH_MESSAGE";
+export const DELETE_FLASH_MESSAGE = "DELETE_FLASH_MESSAGE";

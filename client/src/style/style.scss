@@ -1,0 +1,717 @@
+/**
+|--------------------------------------------------
+| Colors
+|--------------------------------------------------
+*/
+$pink: #ff11a8;
+$lightPink: #ff5ef5;
+$lightBlue: #07eeff;
+$blue: #3711ff;
+$yellow: #ffae09;
+$purple: #cf23ef;
+$darkBlue: #1b123d;
+
+/**
+|--------------------------------------------------
+| Fonts family
+|--------------------------------------------------
+*/
+@font-face {
+  font-family: neon;
+  src: url("fonts/neon.TTF") format("truetype");
+  font-display: auto;
+}
+
+@font-face {
+  font-family: montserrat;
+  src: url("fonts/montserrat-medium.otf") format("opentype");
+  font-display: auto;
+}
+
+/**
+|--------------------------------------------------
+| General settings
+|--------------------------------------------------
+*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: darken($darkBlue, 10%) !important;
+  height: 100%;
+  overflow: hidden;
+}
+
+.form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $purple;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $purple;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $yellow;
+  border-radius: 15px;
+
+  &:hover {
+    background: darken($yellow, 10%);
+  }
+}
+
+/**
+|--------------------------------------------------
+| Background shapes
+|--------------------------------------------------
+*/
+.shape1 {
+  border-radius: 50%;
+  width: 12%;
+  height: 30%;
+  background: linear-gradient($blue, $purple);
+  transform: rotate(45deg);
+  position: absolute;
+  top: -75px;
+  left: -75px;
+  z-index: 0;
+}
+
+.shape2 {
+  border-radius: 50%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient($lightBlue, $lightPink);
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: -200px;
+  right: -200px;
+  z-index: 0;
+}
+
+.shape3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 20%;
+  background: linear-gradient(to top right, $pink, $yellow);
+  border-radius: 100px 0 0 100px;
+  z-index: 0;
+}
+
+.shape4 {
+  position: absolute;
+  bottom: 0;
+  left: -35%;
+  transform: rotate(125deg);
+  width: 90%;
+  height: 300px;
+  background: linear-gradient(to top left, $purple, $yellow);
+  border-radius: 150px 0 0 150px;
+  z-index: 0;
+}
+
+/**
+|--------------------------------------------------
+| Window
+|--------------------------------------------------
+*/
+
+#root {
+  background: $darkBlue;
+  width: 80%;
+  height: 80%;
+  z-index: 999;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border-radius: 6px;
+  box-shadow: 0 0 20px $lightPink;
+  padding: 20px;
+  overflow: auto;
+}
+
+/**
+|--------------------------------------------------
+| Title : Name + job
+|--------------------------------------------------
+*/
+
+h1 {
+  position: absolute;
+  top: 4%;
+  left: 10%;
+  z-index: 999;
+  font-family: neon, arial, sans-serif;
+  font-size: 2vw;
+  line-height: 2vw;
+  text-transform: uppercase;
+
+  .titleName {
+    color: #fb4264;
+    text-shadow: 0 0 3vw #f40a35;
+    animation: titleName 2s ease infinite;
+    -moz-animation: titleName 2s ease infinite;
+    -webkit-animation: titleName 2s ease infinite;
+  }
+
+  .job {
+    color: #426dfb;
+    text-shadow: 0 0 3vw #2356ff;
+    animation: job 2s linear infinite;
+    -moz-animation: job 2s linear infinite;
+    -webkit-animation: job 2s linear infinite;
+    -o-animation: job 2s linear infinite;
+  }
+}
+
+/**
+|--------------------------------------------------
+| Top menu
+|--------------------------------------------------
+*/
+
+.navMenu {
+  padding: 15px;
+  position: relative;
+  margin-bottom: 30px;
+
+  div {
+    position: absolute;
+    right: 0;
+    top: 5px;
+  }
+
+  ul {
+    li {
+      margin: 0 15px;
+      line-height: 40px;
+      font-family: "Montserrat", Arial, sans-serif;
+
+      &:nth-child(1) a {
+        color: $yellow;
+      }
+
+      &:nth-child(1) a:hover,
+      &:nth-child(1).active a {
+        text-shadow: 0 0 15px #fff, 0 0 20px $yellow, 0 0 35px $yellow;
+      }
+
+      &:nth-child(2) a {
+        color: $blue;
+      }
+
+      &:nth-child(2) a:hover,
+      &:nth-child(2).active a {
+        text-shadow: 0 0 15px #fff, 0 0 20px $blue, 0 0 35px $blue;
+      }
+
+      &:nth-child(3) a {
+        color: $lightBlue;
+      }
+
+      &:nth-child(3) a:hover,
+      &:nth-child(3).active a {
+        text-shadow: 0 0 15px #fff, 0 0 20px $lightBlue, 0 0 35px $lightBlue;
+      }
+
+      a:hover,
+      &.active a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  button {
+    border: $purple solid 2px;
+    background: none;
+    color: $purple;
+    padding: 0 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-left: 25px;
+
+    &:hover {
+      color: white;
+
+      box-shadow: 0 0 6px white;
+    }
+  }
+}
+
+/**
+|--------------------------------------------------
+| Spinner
+|--------------------------------------------------
+*/
+.spinner {
+  color: white;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/**
+|--------------------------------------------------
+| Login Form Panel
+|--------------------------------------------------
+*/
+
+.loginForm {
+  position: absolute;
+  top: 80px;
+  right: 5px;
+  background: lighten($darkBlue, 5%);
+  border: solid 1px $yellow;
+  width: 400px;
+  padding: 10px;
+  z-index: 1000;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+
+  h4 {
+    text-shadow: 0 0 15px #fff, 0 0 20px $yellow, 0 0 35px $yellow;
+  }
+
+  input {
+    margin: 10px 0;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    margin: 10px 0 0 0;
+    background: none;
+    border: 1px solid $purple;
+    color: $purple;
+    font-weight: bold;
+
+    &:hover {
+      color: white;
+      box-shadow: 0 0 6px white;
+    }
+  }
+}
+
+/**
+|--------------------------------------------------
+| Homepage content
+|--------------------------------------------------
+*/
+
+@media only screen and (max-width: 1920px) {
+  .introduction {
+    font-size: 1.2em;
+
+    div {
+      line-height: 35px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1921px) and (max-width: 2560px) {
+  .introduction {
+    font-size: 1.4em;
+
+    div {
+      line-height: 40px;
+    }
+  }
+}
+
+@media only screen and (min-width: 2561px) {
+  .introduction {
+    font-size: 1.7em;
+
+    div {
+      line-height: 55px;
+    }
+  }
+}
+
+.introduction {
+  padding: 35px 20px 20px 35px;
+
+  div {
+    text-shadow: 0 0 0.5vw black, 0 0 1.5vw black, 0 0 0.2vw $yellow,
+      0vw 0vw 0.05vw $yellow;
+    color: $yellow;
+  }
+
+  h3 {
+    text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 20px $yellow, 0 0 25px $yellow;
+  }
+}
+
+.triangle {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  transform: rotate(45deg);
+  width: 0;
+  border-bottom: solid 300px $purple;
+  border-right: solid 180px transparent;
+  border-left: solid 180px transparent;
+  animation: triangle-flicker 3s linear infinite;
+}
+
+.circle {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+
+  border: 15px solid $lightBlue;
+  border-radius: 50%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+  opacity: 0.9;
+  width: 300px;
+  height: 300px;
+  z-index: 86;
+}
+
+/**
+|--------------------------------------------------
+| Workpage content
+|--------------------------------------------------
+*/
+
+.category {
+  h6 {
+    color: white;
+    width: 150px;
+    text-align: center;
+  }
+
+  .categoryBtn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    background: none;
+    border: solid 1px $blue;
+    color: $blue;
+    border-radius: 4px;
+
+    &:hover {
+      color: white;
+      box-shadow: 0 0 8px $blue;
+    }
+  }
+}
+
+.workList {
+  margin-right: 30px;
+
+  h6 {
+    color: white;
+    width: 180px;
+    text-align: center;
+  }
+
+  .workBtn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    background: none;
+    border: solid 1px $purple;
+    color: $purple;
+    border-radius: 4px;
+
+    &:hover {
+      color: white;
+      box-shadow: 0 0 8px $purple;
+    }
+  }
+}
+
+.work-image {
+  margin: 15px auto;
+  width: 60%;
+  display: block;
+}
+
+.work {
+  border: double 5px $blue;
+  margin: 10px 25px;
+  padding: 10px;
+  text-shadow: 0 0 1vw black, 0vw 0vw 0.1vw $blue;
+  color: $blue;
+  line-height: 25px;
+  box-shadow: 0 0 5px $blue;
+
+  h3 {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px $blue, 0 0 50px $blue;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+    margin: auto;
+  }
+
+
+
+  .linksBtn a {
+    display: inline-block;
+    margin-right: 10px;
+    width: 100px;
+    text-align: center;
+    padding: 5px 8px;
+    background: none;
+    border: solid 1px $yellow;
+    color: $yellow;
+    border-radius: 4px;
+
+    &:hover {
+      color: white;
+      box-shadow: 0 0 8px $yellow;
+      text-decoration: none;
+    }
+  }
+}
+
+/**
+|--------------------------------------------------
+| Skillpage content
+|--------------------------------------------------
+*/
+
+@media only screen and (max-width: 1920px) {
+  .course {
+    font-size: 1.2em;
+
+    p {
+      line-height: 35px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1921px) and (max-width: 2560px) {
+  .course {
+    font-size: 1.4em;
+
+    p {
+      line-height: 40px;
+    }
+  }
+}
+
+@media only screen and (min-width: 2561px) {
+  .course {
+    font-size: 1.7em;
+
+    p {
+      line-height: 55px;
+    }
+  }
+}
+
+.course {
+  padding: 20px;
+
+  p {
+    text-shadow: 0 0 1vw black, 0 0 0.4vw $lightBlue,
+      0vw 0vw 0.1vw $lightBlue;
+    color: $lightBlue;
+
+  }
+
+  h3 {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 50px $lightBlue;
+    color: #fff;
+  }
+}
+
+.table-skills {
+  .form-group .form-control {
+    background: none;
+    border: $purple 1px solid;
+    color: $purple;
+
+    option {
+      background-color: $darkBlue;
+    }
+  }
+
+  table {
+    color: $lightBlue;
+  }
+
+  .starRating {
+    color: $yellow;
+    filter: drop-shadow(0px 0px 80px $yellow);
+  }
+}
+
+/**
+|--------------------------------------------------
+| Animations
+|--------------------------------------------------
+*/
+
+@keyframes titleName {
+
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0.5vw 0.5vw 0.1vw #806914;
+    color: #fed128;
+  }
+
+  50% {
+    text-shadow: 0 0 0.5vw #800e0b, 0 0 1.5vw #800e0b, 0.5vw 0.5vw 0.1vw #40340a;
+    color: #806914;
+  }
+}
+
+@keyframes job {
+
+  0%,
+  100% {
+    text-shadow: 0 0 0.5vw #1041ff, 0 0 1.5vw #1041ff,
+      0.25vw 0.25vw 0.05vw #147280;
+    color: #28d7fe;
+  }
+
+  50% {
+    text-shadow: 0 0 0.25vw #082180, 0 0 0.75vw #082180,
+      0.25vw 0.25vw 0.05vw #0a3940;
+    color: #146c80;
+  }
+}
+
+@keyframes triangle-flicker {
+  0% {
+    opacity: 0.1;
+    -webkit-filter: drop-shadow(0px 0px 78px $purple);
+    -moz-filter: drop-shadow(0px 0px 78px $purple);
+    filter: drop-shadow(0px 0px 78px $purple);
+  }
+
+  // 2% {
+  //   opacity: 1;
+  //   -webkit-filter: drop-shadow(0px 0px 78px $purple);
+  //   -moz-filter: drop-shadow(0px 0px 78px $purple);
+  //   filter: drop-shadow(0px 0px 78px $purple);
+  // }
+
+  // 4% {
+  //   opacity: 0.1;
+  //   -webkit-filter: drop-shadow(0px 0px 78px $purple);
+  //   -moz-filter: drop-shadow(0px 0px 78px $purple);
+  //   filter: drop-shadow(0px 0px 78px $purple);
+  // }
+
+  8% {
+    opacity: 1;
+    -webkit-filter: drop-shadow(0px 0px 78px $purple);
+    -moz-filter: drop-shadow(0px 0px 78px $purple);
+    filter: drop-shadow(0px 0px 78px $purple);
+  }
+
+  70% {
+    opacity: 0.7;
+    -webkit-filter: drop-shadow(0px 0px 78px $purple);
+    -moz-filter: drop-shadow(0px 0px 78px $purple);
+    filter: drop-shadow(0px 0px 78px $purple);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-filter: drop-shadow(0px 0px 78px $purple);
+    -moz-filter: drop-shadow(0px 0px 78px $purple);
+    filter: drop-shadow(0px 0px 78px $purple);
+  }
+}
+
+/**
+|--------------------------------------------------
+| Admin settings
+|--------------------------------------------------
+*/
+
+h5 {
+  color: $blue;
+}
+
+.adminHomepage {
+
+  h3,
+  h4 {
+    color: $blue;
+  }
+
+  table {
+    color: $purple;
+  }
+}
+
+/**
+|--------------------------------------------------
+| Responsive settings
+|--------------------------------------------------
+*/
+@media only screen and (max-width: 1500px) {
+  .shapes {
+    display: none;
+  }
+
+  .workList {
+    margin-right: 0;
+  }
+
+  .introduction {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navMenu {
+    .btnMenu {
+      padding: 8px 15px;
+      animation: triangle-flicker 8s linear infinite;
+      margin-left: 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    div {
+      position: relative;
+      box-shadow: 0 0 6px $purple;
+      padding: 8px;
+      margin-top: 10px;
+
+      button {
+        margin-left: 0;
+        animation: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  h1 {
+    font-size: 1.2em;
+  }
+}

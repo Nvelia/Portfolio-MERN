@@ -1,14 +1,16 @@
 import { SET_AUTHENTICATION } from "./../actions/types";
 
 const initialState = {
-  isLoggedIn: false
+  isAuthenticated: false,
+  token: null,
 };
 
 export default function AuthenticationReducer(state = initialState, action) {
   switch (action.type) {
     case SET_AUTHENTICATION:
       return {
-        isLoggedIn: action.payload
+        isAuthenticated: action.authenticated,
+        token: action.token,
       };
     default:
       return state;

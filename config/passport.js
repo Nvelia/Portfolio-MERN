@@ -6,7 +6,7 @@ const ExtractJwt = require("passport-jwt").ExtractJwt;
 const LocalStrategy = require("passport-local");
 
 const jwtOptions = {
-  jwtFromRequest: ExtractJwt.fromHeader("authorization"),
+  jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme("JWT"),
   secretOrKey: config.secretOrKey,
 };
 
@@ -34,6 +34,7 @@ const localLoginStrategy = new LocalStrategy(localOptions, function (
   Member.findOne({ name }, function (err, member) {
     if (err) return done(err);
     if (!member) return done(null, false);
+
     member.comparePasswords(password, function (err, isMatch) {
       if (err) {
         return done(err);

@@ -1,20 +1,22 @@
 import { combineReducers } from "redux";
 import AuthenticationReducer from "./authReducer";
-import CategoryReducer from "./categoryReducer";
 import SkillReducer from "./skillReducer";
 import WorkReducer from "./workReducer";
-import ImageReducer from "./imageReducer";
 import errorReducer from "./errorReducer";
 import flashMessageReducer from "./flashMessagesReducer";
+import componentsVisibilityReducer from "./componentsVisibilityReducer";
+import modalReducer from "./modalReducer";
+import { reducer as formReducer } from "redux-form";
 
 const rootReducer = combineReducers({
   errors: errorReducer,
   auth: AuthenticationReducer,
   work: WorkReducer,
-  category: CategoryReducer,
   skill: SkillReducer,
-  image: ImageReducer,
-  flashMessages: flashMessageReducer
+  flashMessages: flashMessageReducer,
+  componentsVisibility: componentsVisibilityReducer,
+  modal: modalReducer,
+  form: formReducer,
 });
 
 export default rootReducer;

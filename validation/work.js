@@ -3,7 +3,7 @@ const isEmpty = require("is-empty");
 
 module.exports = function validateInput(data) {
   let errors = {};
-  // Convert empty fields to an empty string so we can use validator functions
+
   data.name = !isEmpty(data.name) ? data.name : "";
   data.content = !isEmpty(data.content) ? data.content : "";
   data.github = !isEmpty(data.github) ? data.github : "";
@@ -30,6 +30,6 @@ module.exports = function validateInput(data) {
 
   return {
     errors,
-    isValid: isEmpty(errors)
+    isValid: isEmpty(errors),
   };
 };

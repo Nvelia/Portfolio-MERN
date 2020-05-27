@@ -4,30 +4,22 @@ const Schema = mongoose.Schema;
 const WorkSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   content: {
     type: String,
-    required: true
+    required: true,
   },
   github: {
     type: String,
-    required: true
+    required: true,
   },
   link: {
     type: String,
-    required: true
+    required: true,
   },
-  // image: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "Image"
-  // },
   image: {
-    type: String
+    type: String,
   },
-  category: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Category"
-  }
 });
 module.exports = Work = mongoose.model("works", WorkSchema);

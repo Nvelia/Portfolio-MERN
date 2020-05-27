@@ -1,32 +1,39 @@
 import axios from "axios";
 
+import { addFlashMessage } from "./flashMessageActions";
 import { SET_AUTHENTICATION } from "./types";
 
-export function setAuthentication(isLoggedIn) {
+export function setAuthentication(isLoggedIn, token) {
   return {
     type: SET_AUTHENTICATION,
-    payload: isLoggedIn
+    authenticated: isLoggedIn,
+    token,
   };
 }
 
-export function login(loginData, history) {
-  return function(dispatch) {
+export const userLoginAttempt = (loginData) => {
+  return (dispatch) => {
     axios
       .post(`/members/login`, loginData)
-      .then(response => {
-        localStorage.setItem("token", response.data.token);
-        dispatch(setAuthentication(true));
-        history.push("/administration");
+      .then((response) => {
+        return dispatch(setAuthentication(true, response.data.token));
       })
-      .catch(err => {
-        console.log(err);
+      .catch((err) => {
+        if (err.response.status === 400) {
+          return dispatch(
+            addFlashMessage({
+              type: "error",
+              text: "Id or pass missing",
+            })
+          );
+        } else {
+          return dispatch(
+            addFlashMessage({
+              type: "error",
+              text: "Incorrect id or pass",
+            })
+          );
+        }
       });
   };
-}
-
-export function logout() {
-  return function(dispatch) {
-    dispatch(setAuthentication(false));
-    localStorage.removeItem("token");
-  };
-}
+};

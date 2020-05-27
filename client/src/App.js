@@ -1,44 +1,84 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
+import axios from "axios";
+import { connect } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import Homepage from "./components/homepage/Homepage";
-import WorkHomepage from "./components/workPage/WorkHomepage";
-import SkillHomepage from "./components/skillPage/SkillHomepage";
-import AdminHomePage from "./components/admin/AdminHomepage";
-import Logout from "./containers/partials/auth/Logout";
-import RequireAuth from "./utils/RequireAuth";
-import AddCategory from "./containers/admin/category/AddCategory";
-import AddSkill from "./containers/admin/skill/AddSkill";
-import AddWork from "./containers/admin/work/AddWork";
 
-function App() {
-  return (
-    <Switch>
-      <Route exact path="/" component={Homepage} />
-      <Route exact path="/creations" component={WorkHomepage} />
-      <Route exact path="/competences" component={SkillHomepage} />
-      <Route
-        exact
-        path="/administration"
-        component={RequireAuth(AdminHomePage)}
-      />
-      <Route exact path="/logout" component={RequireAuth(Logout)} />
-      <Route
-        exact
-        path="/administration/ajouter-categorie"
-        component={RequireAuth(AddCategory)}
-      />
-      <Route
-        exact
-        path="/administration/ajouter-competence"
-        component={RequireAuth(AddSkill)}
-      />
-      <Route
-        exact
-        path="/administration/ajouter-creation"
-        component={RequireAuth(AddWork)}
-      />
-    </Switch>
-  );
+import store from "./store";
+import Fullpage from "./portfolio/Fullpage";
+import ContactModal from "./portfolio/partials/ContactModal";
+import AdminHomePage from "./administration/AdminHomepage";
+import SkillForm from "./administration/forms/SkillForm";
+import WorkForm from "./administration/forms/WorkForm";
+
+import RequireAuth from "./HOC/RequireAuth";
+import { fetchWorks } from "./actions/workActions";
+
+class App extends Component {
+  state = {
+    works: null,
+  };
+
+  componentDidMount() {
+    this.props.fetchWorks();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.works !== this.props.works) {
+      this.setState({
+        works: this.props.works,
+      });
+    }
+
+    if (prevProps.auth.token !== this.props.auth.token) {
+      const token = store.getState().auth.token;
+
+      if (token) {
+        axios.defaults.headers.common["Authorization"] = token;
+      } else {
+        axios.defaults.headers.common["Authorization"] = null;
+        // delete axios.defaults.headers.common['Authorization'];
+      }
+    }
+  }
+
+  render() {
+    const { works } = this.state;
+
+    return (
+      <Fragment>
+        {this.props.modal.opened && <ContactModal />}
+
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={works && ((props) => <Fullpage works={works} />)}
+          />
+          <Route exact path="/administration" component={AdminHomePage} />
+          <Route
+            exact
+            path="/administration/skill-form"
+            component={RequireAuth(SkillForm)}
+          />
+          <Route
+            exact
+            path="/administration/work-form"
+            component={RequireAuth(WorkForm)}
+          />
+        </Switch>
+      </Fragment>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    works: state.work.workList,
+    modal: state.modal,
+    auth: state.auth,
+  };
+};
+
+export default connect(mapStateToProps, {
+  fetchWorks,
+})(App);

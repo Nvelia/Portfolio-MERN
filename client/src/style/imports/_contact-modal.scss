@@ -1,0 +1,35 @@
+.contact-modal {
+  position: fixed;
+  max-width: 500px;
+  background: #fff;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  box-shadow: 0 0 20px $primary;
+  padding: 20px 50px;
+
+  .modal-close-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+
+    &:hover {
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contact-links a {
+    color: $primary;
+  }
+}

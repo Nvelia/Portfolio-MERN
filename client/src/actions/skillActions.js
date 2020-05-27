@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { addFlashMessage } from "./flashMessageActions";
 import {
   ADD_SKILL,
@@ -7,87 +8,81 @@ import {
   UPDATE_SKILL,
   GET_ERRORS,
   SKILLS_UNLOAD,
-  SKILLS_REQUEST
 } from "./types";
 
 export function addSkill(skillData, history) {
-  return function(dispatch) {
+  return function (dispatch) {
     axios
       .post(`/skills/add`, skillData)
-      .then(response => {
+      .then((response) => {
         dispatch({
           type: ADD_SKILL,
-          payload: response.data
+          payload: response.data,
         });
         history.push("/administration");
-        dispatch(
+        return dispatch(
           addFlashMessage({
             type: "success",
-            text: "Compétence ajoutée."
+            text: "Compétence ajoutée.",
           })
         );
       })
-      .catch(err => {
-        dispatch({
+      .catch((err) => {
+        return dispatch({
           type: GET_ERRORS,
-          payload: err.response.data
+          payload: err.response.data,
         });
       });
   };
 }
 
 export function fetchSkills() {
-  return function(dispatch) {
-    dispatch(skillsRequest());
+  return function (dispatch) {
     axios
       .get(`/skills/`)
-      .then(response => {
-        dispatch({
+      .then((response) => {
+        return dispatch({
           type: FETCH_SKILLS,
-          payload: response.data
+          payload: response.data,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 }
 
 export function deleteSkill(id) {
-  return function(dispatch) {
-    axios.delete(`/skills/${id}`).then(response => {
-      dispatch({ type: DELETE_SKILL, payload: id });
+  return function (dispatch) {
+    axios.delete(`/skills/${id}`).then(() => {
+      return dispatch({ type: DELETE_SKILL, payload: id });
     });
   };
 }
 
 export function updateSkill(id, skillData, history) {
-  return function(dispatch) {
+  return function (dispatch) {
     axios
       .post(`/skills/${id}`, skillData)
-      .then(response => {
+      .then(() => {
         dispatch({ type: UPDATE_SKILL, payload: id });
         history.push("/administration");
-        dispatch(
+        return dispatch(
           addFlashMessage({
             type: "success",
-            text: "Compétence modifiée."
+            text: "Compétence modifiée.",
           })
         );
       })
-      .catch(err => {
-        dispatch({
+      .catch((err) => {
+        return dispatch({
           type: GET_ERRORS,
-          payload: err.response.data
+          payload: err.response.data,
         });
       });
   };
 }
 
 export const skillsUnload = () => ({
-  type: SKILLS_UNLOAD
-});
-
-export const skillsRequest = () => ({
-  type: SKILLS_REQUEST
+  type: SKILLS_UNLOAD,
 });

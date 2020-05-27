@@ -1,0 +1,170 @@
+.homepage {
+  width: 100%;
+  height: 100%;
+
+  @media screen and (min-width: 1251px) {
+    display: flex;
+  }
+}
+
+.homepage .homepage-titles-container {
+  @media screen and (min-width: 1251px) {
+    width: 60%;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1250px) {
+    width: 100%;
+    height: 50%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: 30%;
+  }
+
+  position: relative;
+  animation: name-slide 2.5s forwards;
+  margin: auto;
+  bottom: 10%;
+  text-align: right;
+  font-family: "Montserrat", sans-serif;
+
+  .homepage-titles-and-bar {
+    display: flex;
+    position: absolute;
+
+    @media screen and (min-width: 1251px) {
+      right: 50px;
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 1250px) {
+      bottom: 0px;
+      left: 100px;
+    }
+
+    @media screen and (max-width: 600px) {
+      bottom: -50px;
+      left: 50px;
+    }
+  }
+
+  .homepage-titles h1 {
+    font-size: 7vmin;
+    text-align: right;
+
+    .homepage-titles-job {
+      opacity: 0;
+      animation: fade-enter 1.5s linear 3.9s forwards;
+    }
+
+    .colored-word {
+      color: $primary;
+    }
+  }
+
+  .animated-bar {
+    width: 5px;
+    margin-left: 40px;
+    height: 0px;
+    background: $primary;
+    animation: bar-appearing 1s linear 2.7s forwards;
+  }
+
+  .contact-btn {
+    display: block;
+    float: right;
+    clear: right;
+    opacity: 0;
+    background: $primary;
+    color: white;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3vmin;
+    padding: 1vmin 3vmin;
+    animation: fade-enter 1.5s linear 3.9s forwards;
+    transition: 0.5s;
+
+    &:hover {
+      background: white;
+      color: $primary;
+      border: 1px solid $primary;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.homepage .homepage-introduction-container {
+  @media screen and (min-width: 1251px) {
+    width: 40%;
+    height: 100%;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1250px) {
+    width: 100%;
+    height: 50%;
+  }
+
+  @media screen and (max-width: 601px) {
+    width: 100%;
+    height: 70%;
+  }
+
+  background-color: $primary;
+  box-shadow: 0px 0px 10px black;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+
+  .homepage-introduction {
+    @media screen and (min-width: 1251px) {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      transform: translate(-10%, -50%);
+      line-height: 3vmin;
+      font-size: 1.6vmin;
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 1250px) {
+      padding: 20px 50px;
+      line-height: 3vmin;
+      font-size: 1.6vmin;
+    }
+
+    @media screen and (max-width: 600px) {
+      padding: 15px 25px;
+      line-height: 20px;
+      font-size: 10px;
+      text-align: justify;
+    }
+
+    color: white;
+    opacity: 0;
+    animation: fade-enter 1.5s linear 3.9s forwards;
+    font-family: "Segoe", sans-serif;
+
+    .about-btn {
+      background: white;
+      font-family: "Segoe", sans-serif;
+      color: $primary;
+      display: block;
+      margin: 3vmin auto;
+      padding: 1vmin 3vmin;
+      border: 1px solid $primary;
+      border-radius: 4px;
+      transition: 0.5s;
+
+      &:hover {
+        background: $primary;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -3,11 +3,10 @@ import {
   FETCH_WORKS,
   DELETE_WORK,
   UPDATE_WORK,
-  SAVE_WORK,
-  WORKS_UNLOAD
+  WORKS_UNLOAD,
 } from "./../actions/types";
 
-const initialState = { workList: [], workToDisplay: null };
+const initialState = { workList: [] };
 
 export default function WorkReducer(state = initialState, action) {
   switch (action.type) {
@@ -18,7 +17,7 @@ export default function WorkReducer(state = initialState, action) {
       return { ...state, workList: action.payload };
 
     case DELETE_WORK:
-      const newWorkList = state.workList.filter(work => {
+      const newWorkList = state.workList.filter((work) => {
         if (work._id === action.payload) {
           return false;
         } else {
@@ -28,19 +27,15 @@ export default function WorkReducer(state = initialState, action) {
 
       return {
         ...state,
-        workList: newWorkList
+        workList: newWorkList,
       };
 
     case UPDATE_WORK:
       return state;
 
-    case SAVE_WORK:
-      return { ...state, workToDisplay: action.payload };
-
     case WORKS_UNLOAD:
       return {
         workList: [],
-        workToDisplay: null
       };
 
     default:

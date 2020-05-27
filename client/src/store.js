@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
+
 const invariant = require("redux-immutable-state-invariant").default();
 
 const middlewares = [thunk, invariant];

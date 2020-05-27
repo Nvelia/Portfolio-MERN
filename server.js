@@ -8,7 +8,6 @@ const cors = require("cors");
 const app = express();
 
 // const db = require("./config/keys").mongoURI; // DB Config
-
 const port = process.env.PORT || 5000;
 const formData = require("express-form-data");
 

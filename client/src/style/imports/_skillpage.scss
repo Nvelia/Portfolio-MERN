@@ -1,0 +1,132 @@
+.skillpage {
+  height: 100%;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 60px;
+  }
+
+  .curved-shape {
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+
+    @media screen and (min-width: 601px) {
+      background-color: $primary;
+      color: #fff;
+      height: 16vmax;
+    }
+
+    svg {
+      display: block;
+    }
+  }
+
+  .skill-contact-btn {
+    @media screen and (min-width: 601px) {
+      top: 4.7vmax;
+      right: 6.8vmax;
+      padding: 0.9vmin 3.3vmin;
+      font-size: 2.3vmin;
+    }
+
+    @media screen and (max-width: 600px) {
+      top: 10px;
+      right: 10px;
+      padding: 4px 12px;
+      font-size: 10px;
+    }
+
+    display: block;
+    position: absolute;
+    background: #fff;
+    color: $primary;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+
+    z-index: 999;
+    transition: 0.5s;
+
+    &:hover {
+      background: $primary;
+      color: #fff;
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.skillpage-container {
+  margin: auto;
+  position: relative;
+
+  @media screen and (min-width: 601px) {
+    display: flex;
+    width: 90%;
+  }
+
+  .table-skills {
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+      table tr td {
+        padding: 2px;
+      }
+
+      select.form-control:not([size]):not([multiple]) {
+        height: 25px;
+      }
+
+      select {
+        font-size: 10px;
+        padding: 2px;
+      }
+      font-size: 10px;
+    }
+
+    @media screen and (min-width: 601px) {
+      select {
+        font-size: 1.5vmin;
+      }
+      font-size: 1.5vmin;
+    }
+
+    .starRating {
+      color: $primary;
+    }
+  }
+
+  .career {
+    @media screen and (min-width: 1001px) {
+      font-size: 1.5vmin;
+    }
+    @media screen and (max-width: 1000px) {
+      font-size: 12px;
+    }
+
+    @media screen and (max-width: 600px) {
+      padding: 0 10px;
+
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      font-size: 10px;
+    }
+
+    @media screen and (min-width: 601px) {
+      padding: 0 50px;
+
+      h3 {
+        margin-bottom: 30px;
+      }
+    }
+
+    font-family: "Segoe", sans-serif;
+  }
+}

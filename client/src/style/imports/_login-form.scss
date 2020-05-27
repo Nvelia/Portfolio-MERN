@@ -1,0 +1,19 @@
+.login-form,
+.skill-form {
+  width: 600px;
+  margin: auto;
+  padding-top: 30px;
+
+  h2 {
+    color: $primary;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .form-label {
+    color: $text-color;
+    font-size: 1.1em;
+  }
+}

@@ -1,0 +1,37 @@
+.login-btn,
+.add-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: #fff;
+  border: solid 1px $primary;
+  color: $primary;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: $primary;
+    border: solid 1px $primary;
+    color: #fff;
+
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.admin-back-button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  a {
+    color: $primary;
+    font-size: 18px;
+
+    i {
+      color: $primary;
+      font-size: 18px;
+    }
+  }
+}

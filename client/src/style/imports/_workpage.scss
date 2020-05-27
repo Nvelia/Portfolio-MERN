@@ -1,0 +1,229 @@
+.workpage {
+  height: 100%;
+  position: relative;
+
+  .work-contact-btn {
+    @media screen and (max-width: 550px) {
+      top: 20px;
+      right: 20px;
+      padding: 4px 12px;
+    }
+
+    @media screen and (min-width: 551px) {
+      top: 4.7vmax;
+      right: 6.8vmax;
+      padding: 0.9vmin 3.3vmin;
+    }
+
+    display: block;
+    position: absolute;
+    background: $primary;
+    color: white;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.3vmin;
+    padding: 0.9vmin 3.3vmin;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 999;
+
+    &.work-contact-btn-enter {
+      animation: fade-enter $duration forwards;
+      animation-delay: $duration * 3;
+    }
+
+    &:hover {
+      background: white;
+      color: $primary;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.work-slider {
+  opacity: 0;
+
+  &.work-slider-enter {
+    animation: fade-enter $duration forwards;
+    animation-delay: $duration * 3;
+  }
+
+  .work-slide {
+    @media screen and (min-width: 1301px) {
+      display: flex;
+      margin: 0 80px;
+    }
+
+    @media screen and (max-width: 1300px) {
+      margin: auto;
+    }
+
+    .work-image {
+      @media screen and (min-width: 1301px) {
+        width: 55%;
+      }
+
+      @media screen and (max-width: 1300px) {
+        width: 60%;
+        margin: 30px auto;
+      }
+
+      text-align: center;
+
+      @media screen and (max-width: 550px) {
+        font-size: 10px;
+      }
+
+      img {
+        width: 100%;
+        margin: 10px auto;
+        display: block;
+        border: solid 1px $text-color;
+      }
+
+      h3 {
+        @media screen and (max-width: 550px) {
+          font-size: 16px;
+        }
+
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+
+    .work-content {
+      @media screen and (min-width: 1301px) {
+        width: 45%;
+        padding: 3vmax 1.5vmax;
+        font-size: 1.5vmin;
+      }
+
+      @media screen and (min-width: 551px) and (max-width: 1300px) {
+        width: 90%;
+        margin: auto;
+        font-size: 13px;
+      }
+
+      @media screen and (max-width: 550px) {
+        width: 90%;
+        margin: auto;
+        font-size: 10px;
+      }
+
+      text-align: justify;
+      font-family: "Segoe", sans-serif;
+    }
+  }
+}
+
+/**
+ * Arrows Previous and Next
+ */
+.workpage {
+  .fp-prev {
+    border-color: transparent $primary transparent transparent;
+    left: 25px;
+
+    @media screen and (max-width: 1300px) {
+      top: 30%;
+    }
+
+    @media screen and (max-width: 550px) {
+      top: 15%;
+      border-width: 18.5px 14px 18.5px 0;
+
+      &:hover {
+        border-width: 18.5px 14px 18.5px 0;
+      }
+    }
+
+    @media screen and (min-width: 551px) {
+      &:hover {
+        border-width: 40.5px 36px 40.5px 0;
+      }
+    }
+  }
+
+  .fp-next {
+    border-color: transparent transparent transparent $primary;
+    right: 25px;
+
+    @media screen and (max-width: 1300px) {
+      top: 30%;
+    }
+
+    @media screen and (max-width: 550px) {
+      top: 15%;
+      border-width: 18.5px 0 18.5px 14px;
+
+      &:hover {
+        border-width: 18.5px 0 18.5px 14px;
+      }
+    }
+
+    @media screen and (min-width: 551px) {
+      &:hover {
+        border-width: 40.5px 0 40.5px 36px;
+      }
+    }
+  }
+}
+
+/**
+ * Page borders
+ */
+.workpage {
+  span {
+    position: absolute;
+    display: block;
+    background: $primary;
+    z-index: 999;
+  }
+
+  .top {
+    width: 100%;
+    height: $border-width;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  .bottom-left {
+    left: 0;
+    transform-origin: top left;
+  }
+
+  .bottom-right {
+    right: 0;
+    transform-origin: top right;
+  }
+
+  .right {
+    right: 0;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .top.workpage-animation {
+    opacity: 1;
+    animation: top-bar $duration forwards;
+  }
+
+  .bottom-left.workpage-animation,
+  .bottom-right.workpage-animation {
+    animation: bottom-bar $duration forwards;
+    animation-delay: $duration * 2;
+  }
+
+  .left.workpage-animation,
+  .right.workpage-animation {
+    animation: side-bars $duration forwards;
+    animation-delay: $duration;
+  }
+}

@@ -1,0 +1,86 @@
+.arrows-scroll {
+  @media screen and (min-width: 1251px) {
+    color: $primary;
+    left: 48%;
+    width: 100px;
+    height: 100px;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1250px) {
+    &:not(.arrows-homepage) {
+      color: $primary;
+    }
+
+    left: 47%;
+    bottom: 0px;
+    width: 50px;
+    height: 50px;
+
+    &.arrows-homepage {
+      color: #fff;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    &:not(.arrows-homepage) {
+      color: $primary;
+    }
+
+    left: 42%;
+    bottom: 0px;
+    width: 50px;
+    height: 50px;
+
+    &.arrows-homepage {
+      color: #fff;
+    }
+  }
+
+  z-index: 999;
+  opacity: 0;
+  bottom: 10px;
+  cursor: pointer;
+  position: absolute;
+  transform: rotate(90deg);
+  font-size: 3vmax;
+
+  &.arrows-scroll-enter {
+    animation: fade-enter 1.5s forwards;
+    animation-delay: 3.9s;
+  }
+
+  &.work-arrows-scroll-enter {
+    animation: fade-enter $duration forwards;
+    animation-delay: $duration * 3;
+  }
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  margin-left: 0px;
+  width: 0px;
+  height: 0px;
+  background-size: contain;
+  top: 0px;
+}
+
+.second {
+  margin-left: 25px;
+}
+
+.arrows-scroll .arrow.second {
+  animation-name: bounce-arrow;
+  animation-duration: 1.4s;
+  animation-delay: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.arrows-scroll .arrow.first {
+  animation-name: bounce-arrow;
+  animation-duration: 1.4s;
+  animation-delay: 0.35s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

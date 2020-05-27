@@ -1,0 +1,95 @@
+.menu {
+  @media screen and (min-width: 601px) {
+    top: 6vmax;
+    left: 5vmax;
+  }
+
+  @media screen and (max-width: 600px) {
+    top: 15px;
+    left: 10px;
+  }
+
+  position: absolute;
+  z-index: 999;
+  opacity: 0;
+
+  ul {
+    @media screen and (max-width: 600px) {
+      font-size: 12px;
+    }
+
+    display: flex;
+    list-style-type: none;
+    color: $text-color;
+    font-size: 2vmin;
+    font-family: "Montserrat", sans-serif;
+
+    li button {
+      @media screen and (max-width: 600px) {
+        margin: 0 5px;
+      }
+      margin: 0 1.3vmax;
+      color: $text-color;
+      cursor: pointer;
+      background: none;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &.menu-item-selected {
+        color: $primary;
+        border-bottom: solid 2px $primary;
+      }
+
+      @media screen and (min-width: 601px) {
+        &.menu-reversed-colors {
+          color: #fff;
+        }
+      }
+
+      &.menu-reversed-colors:hover {
+        border-bottom: solid 2px #fff !important;
+      }
+
+      &.menu-reversed-colors.menu-item-selected {
+        border-bottom: solid 2px #fff;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:hover:not(.menu-item-selected) {
+        border-bottom: solid 2px $primary;
+      }
+    }
+  }
+}
+
+.menu.menu-enter {
+  animation-name: fade-enter;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 3.9s;
+  animation-fill-mode: forwards;
+}
+
+.menu.workpage-menu-enter {
+  animation-name: fade-enter;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: $duration * 3;
+  animation-fill-mode: forwards;
+}
+
+.menu.skillpage-menu-enter {
+  animation-name: fade-enter;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.menu.menu-exit {
+  opacity: 0;
+}

@@ -4,13 +4,9 @@ import {
   DELETE_SKILL,
   UPDATE_SKILL,
   SKILLS_UNLOAD,
-  SKILLS_REQUEST
 } from "./../actions/types";
 
-export default function SkillReducer(
-  state = { skills: null, isFetching: false },
-  action
-) {
+export default function SkillReducer(state = { skills: null }, action) {
   switch (action.type) {
     case ADD_SKILL:
       return { ...state };
@@ -19,25 +15,18 @@ export default function SkillReducer(
       return {
         ...state,
         skills: action.payload,
-        isFetching: false
-      };
-
-    case SKILLS_REQUEST:
-      return {
-        ...state,
-        isFetching: true
       };
 
     case DELETE_SKILL:
       return {
         ...state,
-        skills: state.skills.filter(skill => {
+        skills: state.skills.filter((skill) => {
           if (skill._id === action.payload) {
             return false;
           } else {
             return true;
           }
-        })
+        }),
       };
 
     case UPDATE_SKILL:
@@ -47,7 +36,6 @@ export default function SkillReducer(
       return {
         ...state,
         skills: null,
-        isFetching: false
       };
 
     default:

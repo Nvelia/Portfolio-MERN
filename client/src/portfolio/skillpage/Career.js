@@ -19,7 +19,7 @@ const Career = () => {
         MySql.
       </p>
       <p>
-        Découvrant tout juste la puissance d'un langage Web comme PHP,{" "}
+        Débutant en PHP,{" "}
         <strong>
           j'ai effectué mon projet de fin de formation sur Symfony 3 pour
           découvrir les frameworks PHP
@@ -28,15 +28,13 @@ const Career = () => {
         découvrir les différentes nouveautés et mises à jour du Framework.
       </p>
       <p>
-        Mes plus grosses difficultés venant du Javascript, indispensable de nos
-        jours, j'ai décidé d'étudier plus en profondeur ce langage en commençant
-        par la bibliothèque jQuery. L'étude du Javascript m'a permis de
-        découvrir des bibliothèques et outils très puissant qui ont tout de
-        suite suscité mon intéret. Je me suis alors tourné vers l'étude de ces
-        outils et nouveaux procédés de développement rapides, évolutifs et
-        polyvalents.{" "}
+        Mes plus grosses difficultés venant du Javascript, indispensable dans de
+        nombreux cas, j'ai décidé d'étudier plus en profondeur ce langage en
+        réalisant différents projets utilisant librairies et bibliothèques
+        Javascript.
         <strong>
-          L'étude de React et Symfony occupent aujourd'hui tout mon temps libre.
+          Je me suis rapidement passionné pour React et réalise maintenant
+          depuis 1 an et demi la majorité de mes projets sur ce framework.
         </strong>
       </p>
       <p>

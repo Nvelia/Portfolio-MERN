@@ -80,39 +80,41 @@ class Homepage extends Component {
                   de développer et mettre en pratique les compétences de mon
                   choix permettant notamment l'introduction de la
                   personnalisation complète d'un smartphone (choix de couleur,
-                  texture etc) pour les clients.
+                  texture etc) pour les clients et{" "}
+                  <strong>
+                    faire mes premiers pas en développement en créant un mini
+                    intranet en PHP.
+                  </strong>
                 </div>
                 <div>
-                  Passioné de technologie et de divertissement numérique depuis
+                  Passionné de technologie et de divertissement numérique depuis
                   toujours,{" "}
                   <strong>
-                    j'ai décidé de me former il y a deux ans dans le
-                    développemeent web au sein de la formation diplomante
-                    Développeur Web Junior chez OpenClassrooms.com.
+                    j'ai débuté ma formation il y a deux ans dans le
+                    développement web et obtenu mon diplôme de Développeur Web
+                    Junior chez OpenClassrooms.com.
                   </strong>
                   <br />
-                  J'ai pu apprendre dans un premier temps les bases grâce à
-                  l'HTML, le CSS, JavaScript, PHP et SQL.
+                  J'ai pu apprendre ainsi les bases grâce à l'HTML, le CSS,
+                  JavaScript, PHP et SQL.
                   <br />
+                  Autodidacte, j'ai ensuite approfondi ces connaissances en
+                  découvrant et expérimentant des{" "}
                   <strong>
-                    Autodidacte, j'ai ensuite approfondi ces connaissances en
-                    découvrant et expérimentant des outils et bibliothèques
-                    javascript
-                  </strong>{" "}
-                  tels que jQuery, ReactJS, Node.JS{" "}
-                  <strong>et des Framework</strong> comme Bootstrap et Symfony
-                  4.
+                    outils et bibliothèques javascript tels que jQuery, ReactJS,
+                    Node.JS et des Framework comme Bootstrap et Symfony 4.
+                  </strong>
                 </div>
                 <div>
                   <strong>
-                    Je cherche désormais à renforcer mes connaissances suscitées
-                    mais plus particulièrement autour de Javascript et ses
-                    bibliothèques ainsi que PHP à travers le Framework Symfony.
+                    Aujourd'hui, je travaille pour renforcer mes connaissances
+                    suscitées et plus particulièrement autour de Javascript et
+                    ses bibliothèques ainsi que PHP à travers le Framework
+                    Symfony.
                   </strong>{" "}
-                  Pour ce faire, mon objectif aujourd'hui est la mise à profit
-                  de mes connaissances au sein d'une entreprise afin de
-                  développer et partager mes connaissances tout en continuant de
-                  me former de mon côté.
+                  Pour ce faire, mon objectif est la mise à profit de mes
+                  connaissances au sein d'une entreprise afin de développer et
+                  partager mes connaissances tout en continuant de me former.
                 </div>
                 <button
                   onClick={() => this.props.fullpageApi.moveTo(3)}

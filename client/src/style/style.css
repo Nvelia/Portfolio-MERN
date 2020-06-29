@@ -426,12 +426,21 @@ body,
     line-height: 3vmin;
     font-size: 1.6vmin;
   }
+  .homepage .homepage-introduction-container .homepage-introduction div {
+    margin-bottom: 30px;
+  }
+  .homepage .homepage-introduction-container .homepage-introduction div strong {
+    text-shadow: 0px 0px 2px black;
+  }
 }
 @media screen and (min-width: 601px) and (max-width: 1250px) {
   .homepage .homepage-introduction-container .homepage-introduction {
     padding: 20px 50px;
     line-height: 3vmin;
     font-size: 1.6vmin;
+  }
+  .homepage .homepage-introduction-container .homepage-introduction div {
+    margin-bottom: 30px;
   }
 }
 @media screen and (max-width: 600px) {
